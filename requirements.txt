@@ -1,0 +1,11 @@
+flask
+transformers
+torch
+scikit-learn
+pandas
+accelerate -U
+transformers[torch]
+
+torchvision 
+torchaudio
+
