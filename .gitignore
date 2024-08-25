@@ -1,0 +1,21 @@
+# Bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+.env
+
+#model results
+results/
+model/
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Distribution and packaging
+dist/
+build/
+*.egg-info/
