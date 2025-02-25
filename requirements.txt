@@ -1,14 +1,11 @@
-flask
-transformers
-torch
 scikit-learn
 pandas
-accelerate -U
-transformers[torch]
 torchvision 
 torchaudio
 Flasgger
 flask-cors
 Pillow
 pytesseract
-
+flask
+joblib
+numpy

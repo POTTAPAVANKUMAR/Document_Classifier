@@ -1,10 +1,11 @@
 from PIL import Image
 import pytesseract
 import logging
+from .base_service import BaseService
 
 logger = logging.getLogger(__name__)
 
-class OCRService:
+class OCRService(BaseService):
     def perform_ocr(self, file):
         try:
             logger.info("Performing OCR on the provided image file")

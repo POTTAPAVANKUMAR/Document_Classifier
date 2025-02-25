@@ -43,7 +43,17 @@ def train():
       500:
         description: Internal server error
     """
-    data = request.get_json()
+    data = request.get_json().get('training_data', [])
+    if not data:
+        return jsonify({"message": "Invalid input data"}), 400
+
     training_service = TrainingService()
-    message = training_service.train_model(data)
-    return jsonify({"message": message})
+    try:
+        message = training_service.train_model(data)
+        return jsonify({"message": message})
+    except ValueError as e:
+        return jsonify({"message": str(e), "data": data}), 400
+    except KeyError as e:
+        return jsonify({"message": str(e)}), 400
+    except Exception as e:
+        return jsonify({"message": "Internal server error"}), 500
